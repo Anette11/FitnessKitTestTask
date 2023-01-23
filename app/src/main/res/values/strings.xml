@@ -1,4 +1,3 @@
 <resources>
     <string name="app_name">FitnessKitTestTask</string>
-    <string name="base_url">https://olimpia.fitnesskit-admin.ru/</string>
 </resources>
