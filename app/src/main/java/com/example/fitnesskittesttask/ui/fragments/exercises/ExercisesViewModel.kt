@@ -67,6 +67,7 @@ class ExercisesViewModel @Inject constructor(
                     val exercises = mutableListOf<Item>()
                     t.lessons
                         .filter { lesson -> createDateFromString(lesson.date) != null }
+                        .sortedBy { lesson -> lesson.startTime ?: "N/A" }
                         .sortedBy { lesson -> createDateFromString(date = lesson.date) }
                         .forEach { lesson ->
                             val date = Item.Date(date = lesson.date ?: "N/A")
