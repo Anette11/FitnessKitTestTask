@@ -12,6 +12,9 @@ import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
 import javax.inject.Inject
 
 @HiltViewModel
@@ -27,6 +30,9 @@ class ExercisesViewModel @Inject constructor(
     private val _exercises: MutableLiveData<List<Item>> = MutableLiveData(emptyList())
     val exercises: LiveData<List<Item>> = _exercises
 
+    private val _toast: MutableLiveData<String> = MutableLiveData()
+    val toast: LiveData<String> = _toast
+
     private fun getSchedules() = repository.getSchedules()
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
@@ -38,6 +44,7 @@ class ExercisesViewModel @Inject constructor(
 
             override fun onError(e: Throwable) {
                 _progressBar.value = false
+                _toast.value = "Something went wrong"
             }
 
             override fun onComplete() {
@@ -45,21 +52,41 @@ class ExercisesViewModel @Inject constructor(
             }
 
             override fun onNext(t: GetScheduleResponse) {
-                val exercises = t.lessons.map { lesson ->
-                    Item.Training(
-                        from = lesson.startTime ?: "N/A",
-                        to = lesson.endTime ?: "N/A",
-                        training = lesson.name ?: "N/A",
-                        trainer = "N/A",
-                        place = lesson.place ?: "N/A"
-                    )
-                }
+                val exercises = mutableListOf<Item>()
+                t.lessons
+                    .filter { lesson -> createDateFromString(lesson.date) != null }
+                    .sortedBy { lesson -> createDateFromString(date = lesson.date) }
+                    .forEach { lesson ->
+                        val date = Item.Date(date = lesson.date ?: "N/A")
+                        if (exercises.contains(date).not()) {
+                            exercises.add(Item.Date(date = lesson.date ?: "N/A"))
+                        }
+                        exercises.add(
+                            Item.Training(
+                                from = lesson.startTime ?: "N/A",
+                                to = lesson.endTime ?: "N/A",
+                                training = lesson.name ?: "N/A",
+                                trainer = "N/A",
+                                place = lesson.place ?: "N/A"
+                            )
+                        )
+                    }
                 _exercises.value = exercises
             }
         })
 
     init {
         getSchedules()
+    }
+
+    private fun createDateFromString(date: String?): Date? {
+        if (date == null) return null
+        return try {
+            val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+            simpleDateFormat.parse(date)
+        } catch (e: ParseException) {
+            null
+        }
     }
 
     fun clearCompositeDisposable() = compositeDisposable.dispose()
