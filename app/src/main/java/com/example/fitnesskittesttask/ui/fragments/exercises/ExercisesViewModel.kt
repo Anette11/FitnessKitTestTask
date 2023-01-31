@@ -25,7 +25,9 @@ class ExercisesViewModel @Inject constructor(
     private val resourcesProvider: ResourcesProvider
 ) : ViewModel() {
 
-    private var compositeDisposable: CompositeDisposable = CompositeDisposable()
+    private val compositeDisposable: CompositeDisposable by lazy {
+        CompositeDisposable()
+    }
 
     private val _progressBar: MutableLiveData<Boolean> = MutableLiveData(false)
     val progressBar: LiveData<Boolean> = _progressBar
@@ -117,5 +119,5 @@ class ExercisesViewModel @Inject constructor(
         }
     }
 
-    fun clearCompositeDisposable() = compositeDisposable.dispose()
+    fun clearCompositeDisposable() = compositeDisposable.clear()
 }
