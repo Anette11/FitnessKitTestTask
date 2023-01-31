@@ -35,7 +35,7 @@ object ScheduleAppModule {
     fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor =
         HttpLoggingInterceptor().apply {
             setLevel(
-                if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BASIC
+                if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY
                 else HttpLoggingInterceptor.Level.NONE
             )
         }
