@@ -5,4 +5,9 @@
     <string name="menu_item_add_title">Добавить</string>
     <string name="menu_item_chat_title">Чат</string>
     <string name="menu_item_more_title">Ещё</string>
+    <string name="fragment_name_exercises">ExercisesFragment</string>
+    <string name="fragment_name_request">RequestFragment</string>
+    <string name="fragment_name_add">AddFragment</string>
+    <string name="fragment_name_chat">ChatFragment</string>
+    <string name="fragment_name_more">MoreFragment</string>
 </resources>
