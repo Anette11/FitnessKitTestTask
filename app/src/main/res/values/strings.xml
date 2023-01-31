@@ -10,4 +10,5 @@
     <string name="fragment_name_add">AddFragment</string>
     <string name="fragment_name_chat">ChatFragment</string>
     <string name="fragment_name_more">MoreFragment</string>
+    <string name="toolbar_title">Расписание</string>
 </resources>
