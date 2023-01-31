@@ -1,7 +1,7 @@
 package com.example.fitnesskittesttask.data.remote
 
-import android.database.Observable
 import com.example.fitnesskittesttask.data.GetScheduleResponse
+import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.GET
 
 interface ScheduleApi {

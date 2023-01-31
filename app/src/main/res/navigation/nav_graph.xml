@@ -7,27 +7,27 @@
 
     <fragment
         android:id="@+id/addFragment"
-        android:name="com.example.fitnesskittesttask.ui.fragments.AddFragment"
+        android:name="com.example.fitnesskittesttask.ui.fragments.add.AddFragment"
         android:label="AddFragment"
         tools:layout="@layout/fragment_add" />
     <fragment
         android:id="@+id/chatFragment"
-        android:name="com.example.fitnesskittesttask.ui.fragments.ChatFragment"
+        android:name="com.example.fitnesskittesttask.ui.fragments.chat.ChatFragment"
         android:label="ChatFragment"
         tools:layout="@layout/fragment_chat" />
     <fragment
         android:id="@+id/moreFragment"
-        android:name="com.example.fitnesskittesttask.ui.fragments.MoreFragment"
+        android:name="com.example.fitnesskittesttask.ui.fragments.more.MoreFragment"
         android:label="MoreFragment"
         tools:layout="@layout/fragment_more" />
     <fragment
         android:id="@+id/requestFragment"
-        android:name="com.example.fitnesskittesttask.ui.fragments.RequestFragment"
+        android:name="com.example.fitnesskittesttask.ui.fragments.request.RequestFragment"
         android:label="RequestFragment"
         tools:layout="@layout/fragment_request" />
     <fragment
         android:id="@+id/exercisesFragment"
-        android:name="com.example.fitnesskittesttask.ui.fragments.ExercisesFragment"
+        android:name="com.example.fitnesskittesttask.ui.fragments.exercises.ExercisesFragment"
         android:label="fragment_more"
         tools:layout="@layout/fragment_exercises" />
 </navigation>

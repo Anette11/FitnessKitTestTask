@@ -1,7 +1,7 @@
 package com.example.fitnesskittesttask.repository
 
-import android.database.Observable
 import com.example.fitnesskittesttask.data.GetScheduleResponse
+import io.reactivex.rxjava3.core.Observable
 
 interface ScheduleRepository {
 
