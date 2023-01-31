@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/exercise"
+        android:icon="@drawable/ic_calendar"
+        android:title="@string/menu_item_exercise_title" />
+
+    <item
+        android:id="@+id/request"
+        android:icon="@drawable/ic_check_box"
+        android:title="@string/menu_item_request_title" />
+
+    <item
+        android:id="@+id/add"
+        android:icon="@drawable/ic_add"
+        android:title="@string/menu_item_add_title" />
+
+    <item
+        android:id="@+id/chat"
+        android:icon="@drawable/ic_chat"
+        android:title="@string/menu_item_chat_title" />
+
+    <item
+        android:id="@+id/more"
+        android:icon="@drawable/ic_more"
+        android:title="@string/menu_item_more_title" />
+</menu>
