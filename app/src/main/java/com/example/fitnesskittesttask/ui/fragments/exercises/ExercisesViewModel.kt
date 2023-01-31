@@ -3,9 +3,11 @@ package com.example.fitnesskittesttask.ui.fragments.exercises
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.fitnesskittesttask.R
 import com.example.fitnesskittesttask.adapter.Item
 import com.example.fitnesskittesttask.data.GetScheduleResponse
 import com.example.fitnesskittesttask.repository.ScheduleRepository
+import com.example.fitnesskittesttask.util.ResourcesProvider
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observer
@@ -19,7 +21,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ExercisesViewModel @Inject constructor(
-    private val repository: ScheduleRepository
+    private val repository: ScheduleRepository,
+    private val resourcesProvider: ResourcesProvider
 ) : ViewModel() {
 
     private var compositeDisposable: CompositeDisposable = CompositeDisposable()
@@ -44,7 +47,7 @@ class ExercisesViewModel @Inject constructor(
 
             override fun onError(e: Throwable) {
                 _progressBar.value = false
-                _toast.value = "Something went wrong"
+                _toast.value = resourcesProvider.getString(R.string.toast_generic_error_message)
             }
 
             override fun onComplete() {
