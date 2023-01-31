@@ -1,24 +1,24 @@
-package com.example.fitnesskittesttask.fragments
+package com.example.fitnesskittesttask.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.fitnesskittesttask.databinding.FragmentAddBinding
+import com.example.fitnesskittesttask.databinding.FragmentChatBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class AddFragment : Fragment() {
+class ChatFragment : Fragment() {
 
-    private var _binding: FragmentAddBinding? = null
+    private var _binding: FragmentChatBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentAddBinding.inflate(inflater, container, false)
+        _binding = FragmentChatBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
     }

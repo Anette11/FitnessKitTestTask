@@ -1,9 +1,10 @@
-package com.example.fitnesskittesttask
+package com.example.fitnesskittesttask.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.example.fitnesskittesttask.R
 import com.example.fitnesskittesttask.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
