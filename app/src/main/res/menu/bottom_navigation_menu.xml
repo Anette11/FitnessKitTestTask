@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/exercise"
+        android:id="@+id/exercisesFragment"
         android:icon="@drawable/ic_calendar"
         android:title="@string/menu_item_exercise_title" />
 
     <item
-        android:id="@+id/request"
+        android:id="@+id/requestFragment"
         android:icon="@drawable/ic_check_box"
         android:title="@string/menu_item_request_title" />
 
     <item
-        android:id="@+id/add"
+        android:id="@+id/addFragment"
         android:icon="@drawable/ic_add"
         android:title="@string/menu_item_add_title" />
 
     <item
-        android:id="@+id/chat"
+        android:id="@+id/chatFragment"
         android:icon="@drawable/ic_chat"
         android:title="@string/menu_item_chat_title" />
 
     <item
-        android:id="@+id/more"
+        android:id="@+id/moreFragment"
         android:icon="@drawable/ic_more"
         android:title="@string/menu_item_more_title" />
 </menu>
