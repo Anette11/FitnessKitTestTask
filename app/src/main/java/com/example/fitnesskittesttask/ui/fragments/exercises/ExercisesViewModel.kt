@@ -42,58 +42,61 @@ class ExercisesViewModel @Inject constructor(
         _toast.value = null
     }
 
-    fun getSchedules() = repository.getSchedules()
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(object : Observer<GetScheduleResponse> {
-            override fun onSubscribe(d: Disposable) {
-                compositeDisposable.add(d)
-                _progressBar.value = true
-            }
-
-            override fun onError(e: Throwable) {
-                _progressBar.value = false
-                _toast.value = resourcesProvider.getString(R.string.toast_generic_error_message)
-            }
-
-            override fun onComplete() {
-                _progressBar.value = false
-            }
-
-            override fun onNext(t: GetScheduleResponse) {
-                val trainers = t.trainers
-                val exercises = mutableListOf<Item>()
-                t.lessons
-                    .filter { lesson -> createDateFromString(lesson.date) != null }
-                    .sortedBy { lesson -> createDateFromString(date = lesson.date) }
-                    .forEach { lesson ->
-                        val date = Item.Date(date = lesson.date ?: "N/A")
-                        if (exercises.contains(date).not()) {
-                            exercises.add(Item.Date(date = lesson.date ?: "N/A"))
-                        }
-                        exercises.add(
-                            Item.Training(
-                                from = lesson.startTime ?: "N/A",
-                                to = lesson.endTime ?: "N/A",
-                                training = lesson.name ?: "N/A",
-                                trainer = trainers.find { trainer ->
-                                    trainer.id == lesson.coach_id
-                                }?.name ?: "N/A",
-                                place = lesson.place ?: "N/A",
-                                color = lesson.color ?: "#F8F8F8"
-                            )
-                        )
-                    }
-                exercises.forEach { item ->
-                    if (item is Item.Date) {
-                        val transformedDate = createDateFromString(item.date)
-                        val transformedDateString = createStringFromDate(transformedDate)
-                        item.date = transformedDateString
-                    }
+    fun getSchedules() {
+        if (progressBar.value == true) return
+        repository.getSchedules()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : Observer<GetScheduleResponse> {
+                override fun onSubscribe(d: Disposable) {
+                    compositeDisposable.add(d)
+                    _progressBar.value = true
                 }
-                _exercises.value = exercises
-            }
-        })
+
+                override fun onError(e: Throwable) {
+                    _progressBar.value = false
+                    _toast.value = resourcesProvider.getString(R.string.toast_generic_error_message)
+                }
+
+                override fun onComplete() {
+                    _progressBar.value = false
+                }
+
+                override fun onNext(t: GetScheduleResponse) {
+                    val trainers = t.trainers
+                    val exercises = mutableListOf<Item>()
+                    t.lessons
+                        .filter { lesson -> createDateFromString(lesson.date) != null }
+                        .sortedBy { lesson -> createDateFromString(date = lesson.date) }
+                        .forEach { lesson ->
+                            val date = Item.Date(date = lesson.date ?: "N/A")
+                            if (exercises.contains(date).not()) {
+                                exercises.add(Item.Date(date = lesson.date ?: "N/A"))
+                            }
+                            exercises.add(
+                                Item.Training(
+                                    from = lesson.startTime ?: "N/A",
+                                    to = lesson.endTime ?: "N/A",
+                                    training = lesson.name ?: "N/A",
+                                    trainer = trainers.find { trainer ->
+                                        trainer.id == lesson.coach_id
+                                    }?.name ?: "N/A",
+                                    place = lesson.place ?: "N/A",
+                                    color = lesson.color ?: "#F8F8F8"
+                                )
+                            )
+                        }
+                    exercises.forEach { item ->
+                        if (item is Item.Date) {
+                            val transformedDate = createDateFromString(item.date)
+                            val transformedDateString = createStringFromDate(transformedDate)
+                            item.date = transformedDateString
+                        }
+                    }
+                    _exercises.value = exercises
+                }
+            })
+    }
 
     init {
         getSchedules()
