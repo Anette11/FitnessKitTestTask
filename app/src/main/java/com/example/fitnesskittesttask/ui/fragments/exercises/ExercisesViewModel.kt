@@ -36,7 +36,7 @@ class ExercisesViewModel @Inject constructor(
     private val _toast: MutableLiveData<String> = MutableLiveData()
     val toast: LiveData<String> = _toast
 
-    private fun getSchedules() = repository.getSchedules()
+    fun getSchedules() = repository.getSchedules()
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe(object : Observer<GetScheduleResponse> {

@@ -52,6 +52,12 @@ class ExercisesFragment : Fragment() {
         viewModel.toast.observe(viewLifecycleOwner) { message ->
             Toast.makeText(requireActivity(), message, Toast.LENGTH_SHORT).show()
         }
+
+        val swipeRefreshLayout = binding.swipeRefreshLayout
+        swipeRefreshLayout.setOnRefreshListener {
+            viewModel.getSchedules()
+            swipeRefreshLayout.isRefreshing = false
+        }
     }
 
     override fun onDestroyView() {
