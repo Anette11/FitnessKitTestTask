@@ -1,5 +1,6 @@
 package com.example.fitnesskittesttask.adapter
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -65,6 +66,7 @@ class TrainingRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder
             binding.textViewTraining.text = training.training
             binding.textViewTrainer.text = training.trainer
             binding.textViewPlace.text = training.place
+            binding.materialCardView.setCardBackgroundColor(Color.parseColor(training.color))
         }
     }
 

@@ -70,7 +70,8 @@ class ExercisesViewModel @Inject constructor(
                                 to = lesson.endTime ?: "N/A",
                                 training = lesson.name ?: "N/A",
                                 trainer = "N/A",
-                                place = lesson.place ?: "N/A"
+                                place = lesson.place ?: "N/A",
+                                color = lesson.color ?: "#F8F8F8"
                             )
                         )
                     }
