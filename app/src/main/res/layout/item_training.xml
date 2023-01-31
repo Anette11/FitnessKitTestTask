@@ -111,38 +111,51 @@
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="Персональная тренировка" />
 
-                <TextView
-                    android:id="@+id/text_view_trainer"
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="4dp"
-                    android:layout_marginBottom="8dp"
-                    android:drawablePadding="4dp"
-                    android:textColor="@color/black"
-                    app:drawableLeftCompat="@drawable/ic_person"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/text_view_place"
-                    app:layout_constraintStart_toStartOf="@id/text_view_training"
-                    app:layout_constraintTop_toBottomOf="@id/text_view_training"
-                    tools:text="Тренер" />
-
-                <TextView
-                    android:id="@+id/text_view_place"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:drawablePadding="4dp"
-                    android:textColor="@color/black"
-                    app:drawableLeftCompat="@drawable/ic_place"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/text_view_trainer"
-                    app:layout_constraintTop_toBottomOf="@id/text_view_training"
-                    tools:text="Тренажерный зал" />
+                    app:layout_constraintStart_toStartOf="@id/text_view_training"
+                    app:layout_constraintTop_toBottomOf="@id/text_view_training">
+
+                    <ImageView
+                        android:id="@+id/image_view_trainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_person" />
+
+                    <TextView
+                        android:id="@+id/text_view_trainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        tools:text="Тренер" />
+
+                    <ImageView
+                        android:id="@+id/image_view_place"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_place"
+                        app:layout_constraintStart_toEndOf="@id/text_view_trainer"
+                        app:layout_constraintTop_toBottomOf="@id/text_view_training" />
+
+                    <TextView
+                        android:id="@+id/text_view_place"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/text_view_training"
+                        tools:text="Тренажерный зал" />
+
+                </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
