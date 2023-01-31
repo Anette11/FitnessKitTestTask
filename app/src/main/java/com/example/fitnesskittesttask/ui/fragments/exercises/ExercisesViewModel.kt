@@ -55,6 +55,7 @@ class ExercisesViewModel @Inject constructor(
             }
 
             override fun onNext(t: GetScheduleResponse) {
+                val trainers = t.trainers
                 val exercises = mutableListOf<Item>()
                 t.lessons
                     .filter { lesson -> createDateFromString(lesson.date) != null }
@@ -69,7 +70,9 @@ class ExercisesViewModel @Inject constructor(
                                 from = lesson.startTime ?: "N/A",
                                 to = lesson.endTime ?: "N/A",
                                 training = lesson.name ?: "N/A",
-                                trainer = "N/A",
+                                trainer = trainers.find { trainer ->
+                                    trainer.id == lesson.coach_id
+                                }?.name ?: "N/A",
                                 place = lesson.place ?: "N/A",
                                 color = lesson.color ?: "#F8F8F8"
                             )
