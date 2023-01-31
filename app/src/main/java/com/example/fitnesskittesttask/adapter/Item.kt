@@ -3,7 +3,7 @@ package com.example.fitnesskittesttask.adapter
 sealed class Item {
 
     data class Date(
-        val date: String
+        var date: String
     ) : Item()
 
     data class Training(

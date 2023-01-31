@@ -71,6 +71,13 @@ class ExercisesViewModel @Inject constructor(
                             )
                         )
                     }
+                exercises.forEach { item ->
+                    if (item is Item.Date) {
+                        val transformedDate = createDateFromString(item.date)
+                        val transformedDateString = createStringFromDate(transformedDate)
+                        item.date = transformedDateString
+                    }
+                }
                 _exercises.value = exercises
             }
         })
@@ -86,6 +93,16 @@ class ExercisesViewModel @Inject constructor(
             simpleDateFormat.parse(date)
         } catch (e: ParseException) {
             null
+        }
+    }
+
+    private fun createStringFromDate(date: Date?): String {
+        if (date == null) return "N/A"
+        return try {
+            val simpleDateFormat = SimpleDateFormat("EEEE, dd MMMM", Locale.getDefault())
+            simpleDateFormat.format(date)
+        } catch (e: ParseException) {
+            "N/A"
         }
     }
 
