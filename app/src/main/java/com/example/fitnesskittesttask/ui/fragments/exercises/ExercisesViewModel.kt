@@ -36,7 +36,7 @@ class ExercisesViewModel @Inject constructor(
     private val _toast: MutableLiveData<String?> = MutableLiveData()
     val toast: LiveData<String?> = _toast
 
-    fun refreshToast(){
+    fun refreshToast() {
         _toast.value = null
     }
 

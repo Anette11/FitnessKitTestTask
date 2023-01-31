@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -46,7 +45,8 @@ class ExercisesFragment : Fragment() {
         }
 
         viewModel.progressBar.observe(viewLifecycleOwner) {
-            binding.progressbar.isVisible = it
+            if (it) binding.progressbar.visibility = View.VISIBLE
+            else binding.progressbar.visibility = View.GONE
         }
 
         viewModel.toast.observe(viewLifecycleOwner) { message ->
