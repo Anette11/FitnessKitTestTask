@@ -33,8 +33,12 @@ class ExercisesViewModel @Inject constructor(
     private val _exercises: MutableLiveData<List<Item>> = MutableLiveData(emptyList())
     val exercises: LiveData<List<Item>> = _exercises
 
-    private val _toast: MutableLiveData<String> = MutableLiveData()
-    val toast: LiveData<String> = _toast
+    private val _toast: MutableLiveData<String?> = MutableLiveData()
+    val toast: LiveData<String?> = _toast
+
+    fun refreshToast(){
+        _toast.value = null
+    }
 
     fun getSchedules() = repository.getSchedules()
         .subscribeOn(Schedulers.io())

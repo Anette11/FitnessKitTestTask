@@ -50,7 +50,10 @@ class ExercisesFragment : Fragment() {
         }
 
         viewModel.toast.observe(viewLifecycleOwner) { message ->
-            Toast.makeText(requireActivity(), message, Toast.LENGTH_SHORT).show()
+            message?.let {
+                viewModel.refreshToast()
+                Toast.makeText(requireActivity(), message, Toast.LENGTH_SHORT).show()
+            }
         }
 
         val swipeRefreshLayout = binding.swipeRefreshLayout
