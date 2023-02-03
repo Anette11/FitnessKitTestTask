@@ -2,7 +2,7 @@ package com.example.fitnesskittesttask.di
 
 import com.example.fitnesskittesttask.BuildConfig
 import com.example.fitnesskittesttask.data.remote.ScheduleApi
-import com.example.fitnesskittesttask.data.remote.util.Constants
+import com.example.fitnesskittesttask.data.remote.util.RemoteConstants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,14 +17,14 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object ScheduleAppModule {
+object ScheduleNetworkModule {
 
     @Provides
     @Singleton
     fun provideRetrofit(
         okHttpClient: OkHttpClient
     ): Retrofit = Retrofit.Builder()
-        .baseUrl(Constants.baseUrl)
+        .baseUrl(RemoteConstants.baseUrl)
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava3CallAdapterFactory.create())

@@ -1,13 +1,27 @@
 package com.example.fitnesskittesttask.data
 
+import com.google.gson.annotations.SerializedName
+
 data class Trainer(
     val description: String?,
-    val full_name: String?,
+
+    @SerializedName("full_name")
+    val fullName: String?,
+
     val id: String?,
-    val image_url: String?,
-    val image_url_medium: String?,
-    val image_url_small: String?,
-    val last_name: String?,
+
+    @SerializedName("image_url")
+    val imageUrl: String?,
+
+    @SerializedName("image_url_medium")
+    val imageUrlMedium: String?,
+
+    @SerializedName("image_url_small")
+    val imageUrlSmall: String?,
+
+    @SerializedName("last_name")
+    val lastName: String?,
+
     val name: String?,
     val position: String?
 )

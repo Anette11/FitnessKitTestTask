@@ -1,14 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
     <string name="app_name">FitnessKitTestTask</string>
-    <string name="menu_item_exercise_title">Занятия</string>
-    <string name="menu_item_request_title">Заявки</string>
-    <string name="menu_item_add_title">Добавить</string>
-    <string name="menu_item_chat_title">Чат</string>
-    <string name="menu_item_more_title">Ещё</string>
-    <string name="fragment_name_request">RequestFragment</string>
+    <string name="default_color">#F8F8F8</string>
+    <string name="default_value">N/A</string>
     <string name="fragment_name_add">AddFragment</string>
     <string name="fragment_name_chat">ChatFragment</string>
     <string name="fragment_name_more">MoreFragment</string>
-    <string name="toolbar_title">Расписание</string>
+    <string name="fragment_name_request">RequestFragment</string>
+    <string name="menu_item_add_title">Добавить</string>
+    <string name="menu_item_chat_title">Чат</string>
+    <string name="menu_item_exercise_title">Занятия</string>
+    <string name="menu_item_more_title">Ещё</string>
+    <string name="menu_item_request_title">Заявки</string>
     <string name="toast_generic_error_message">Something went wrong</string>
+    <string name="toolbar_title">Расписание</string>
 </resources>

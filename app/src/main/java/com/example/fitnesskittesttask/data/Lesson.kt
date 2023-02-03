@@ -1,20 +1,38 @@
 package com.example.fitnesskittesttask.data
 
+import com.google.gson.annotations.SerializedName
+
 data class Lesson(
-    val appointment_id: String?,
-    val available_slots: Int?,
-    val client_recorded: Boolean?,
-    val coach_id: String?,
+    @SerializedName("appointment_id")
+    val appointmentId: String?,
+
+    @SerializedName("available_slots")
+    val availableSlots: Int?,
+
+    @SerializedName("client_recorded")
+    val clientRecorded: Boolean?,
+
+    @SerializedName("coach_id")
+    val coachId: String?,
+
     val color: String?,
     val commercial: Boolean?,
     val date: String?,
     val description: String?,
     val endTime: String?,
-    val is_cancelled: Boolean?,
+
+    @SerializedName("is_cancelled")
+    val isCancelled: Boolean?,
+
     val name: String?,
     val place: String?,
-    val service_id: String?,
+
+    @SerializedName("service_id")
+    val serviceId: String?,
+
     val startTime: String?,
     val tab: String?,
-    val tab_id: Int?
+
+    @SerializedName("tab_id")
+    val tabId: Int?
 )

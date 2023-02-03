@@ -58,7 +58,7 @@ class ExercisesFragment : Fragment() {
 
         val swipeRefreshLayout = binding.swipeRefreshLayout
         swipeRefreshLayout.setOnRefreshListener {
-            viewModel.getSchedules()
+            viewModel.refreshSchedulesLoad()
             swipeRefreshLayout.isRefreshing = false
         }
     }
