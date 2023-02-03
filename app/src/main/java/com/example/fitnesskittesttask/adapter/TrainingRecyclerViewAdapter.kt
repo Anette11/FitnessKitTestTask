@@ -66,6 +66,7 @@ class TrainingRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder
             binding.textViewTraining.text = training.training
             binding.textViewTrainer.text = training.trainer
             binding.textViewPlace.text = training.place
+            binding.textViewDuration.text = training.duration
             binding.materialCardView.setCardBackgroundColor(Color.parseColor(training.color))
         }
     }

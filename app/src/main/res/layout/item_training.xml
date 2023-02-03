@@ -106,10 +106,21 @@
                     android:layout_marginEnd="8dp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/text_view_duration"
                     app:layout_constraintStart_toEndOf="@id/text_view_from"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="Персональная тренировка" />
+
+                <TextView
+                    android:id="@+id/text_view_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="1ч.15мин." />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -147,7 +158,6 @@
                         android:id="@+id/text_view_place"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:textColor="@color/black"

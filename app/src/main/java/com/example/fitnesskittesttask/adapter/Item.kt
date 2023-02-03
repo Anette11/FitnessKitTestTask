@@ -12,6 +12,7 @@ sealed class Item {
         val training: String,
         val trainer: String,
         val place: String,
-        val color: String
+        val color: String,
+        val duration: String
     ) : Item()
 }

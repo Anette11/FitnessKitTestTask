@@ -12,6 +12,7 @@ import com.example.fitnesskittesttask.data.mappers.toTrainerDbo
 import com.example.fitnesskittesttask.data.remote.ScheduleApi
 import com.example.fitnesskittesttask.util.ResourcesProvider
 import com.example.fitnesskittesttask.util.createDateFromString
+import com.example.fitnesskittesttask.util.createDuration
 import com.example.fitnesskittesttask.util.createStringFromDate
 import io.reactivex.rxjava3.core.Observable
 import io.realm.Realm
@@ -86,7 +87,14 @@ class ScheduleRepositoryImpl @Inject constructor(
                             trainer.id == lesson.coachId
                         }?.name ?: resourcesProvider.getString(R.string.default_value),
                         place = lesson.place ?: resourcesProvider.getString(R.string.default_value),
-                        color = lesson.color ?: resourcesProvider.getString(R.string.default_color)
+                        color = lesson.color ?: resourcesProvider.getString(R.string.default_color),
+                        duration = createDuration(
+                            from = lesson.startTime
+                                ?: resourcesProvider.getString(R.string.default_value),
+                            to = lesson.endTime
+                                ?: resourcesProvider.getString(R.string.default_value),
+                            defaultValue = resourcesProvider.getString(R.string.default_value)
+                        )
                     )
                 )
             }
