@@ -51,8 +51,7 @@ fun createDuration(
         val minutes = difference / minutesInMilliseconds
         difference %= minutesInMilliseconds
 
-        return "${hours}ч.${minutes}мин."
-
+        return if (hours == 0L) "${minutes}мин." else "${hours}ч.${minutes}мин."
     } catch (e: ParseException) {
         return defaultValue
     }
