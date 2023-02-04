@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fitnesskittesttask.adapter.TrainingRecyclerViewAdapter
 import com.example.fitnesskittesttask.databinding.FragmentExercisesBinding
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class ExercisesFragment : Fragment() {
@@ -19,6 +20,9 @@ class ExercisesFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: ExercisesViewModel by viewModels()
+
+    @Inject
+    lateinit var adapter: TrainingRecyclerViewAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,7 +39,6 @@ class ExercisesFragment : Fragment() {
     ) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = TrainingRecyclerViewAdapter()
         val recyclerView = binding.recyclerview
         recyclerView.layoutManager = LinearLayoutManager(requireActivity())
         recyclerView.adapter = adapter

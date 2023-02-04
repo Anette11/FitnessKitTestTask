@@ -6,8 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fitnesskittesttask.databinding.ItemDateBinding
 import com.example.fitnesskittesttask.databinding.ItemTrainingBinding
+import javax.inject.Inject
 
-class TrainingRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class TrainingRecyclerViewAdapter @Inject constructor() :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val trainings = mutableListOf<Item>()
 
