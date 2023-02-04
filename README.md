@@ -5,6 +5,6 @@ Recyclerview should display dates in format "EEEE, dd MMMM" and views for exerci
 
 Exercises screen in created according to provided design.
 
-In project are used: Retrofit, RxJava3, Hilt, Navigation, Single Activity with fragments, Swiperefreshlayout, RecyclerView.
+In project are used: Retrofit, RxJava3, Realm, Hilt, Navigation, Single Activity with fragments, Swiperefreshlayout, RecyclerView, MVVM.
 
-<img src="1.png" width="216" heigth="384">
+<img src="3.png" width="216" heigth="384">
