@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
+    android:padding="@dimen/_8dp"
     tools:context=".ui.fragments.exercises.ExercisesFragment">
 
     <TextView
-        android:layout_width="0dp"
+        android:layout_width="@dimen/_0dp"
         android:layout_height="wrap_content"
         android:text="@string/fragment_name_more"
         android:textAlignment="center"

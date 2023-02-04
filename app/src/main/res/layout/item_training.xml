@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingHorizontal="8dp"
-    android:paddingVertical="4dp">
+    android:paddingHorizontal="@dimen/_8dp"
+    android:paddingVertical="@dimen/_4dp">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/material_card_view"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/_0dp"
         android:layout_height="wrap_content"
-        android:elevation="0dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="0dp"
+        android:elevation="@dimen/_0dp"
+        app:cardCornerRadius="@dimen/_8dp"
+        app:cardElevation="@dimen/_0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,8 +25,8 @@
 
             <View
                 android:id="@+id/view_left"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="@dimen/_0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/view_right"
                 app:layout_constraintStart_toStartOf="parent"
@@ -34,24 +34,24 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/view_right"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:elevation="0dp"
-                app:cardCornerRadius="8dp"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="@dimen/_0dp"
+                android:elevation="@dimen/_0dp"
+                app:cardCornerRadius="@dimen/_8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/view_left"
                 app:layout_constraintTop_toTopOf="parent"
                 app:strokeColor="@android:color/darker_gray"
-                app:strokeWidth="1dp" />
+                app:strokeWidth="@dimen/_1dp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
+                android:layout_width="@dimen/_0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginStart="@dimen/_8dp"
+                android:layout_marginEnd="@dimen/_8dp"
                 android:background="@color/white"
-                android:elevation="1dp"
+                android:elevation="@dimen/_1dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -59,8 +59,8 @@
 
                 <View
                     android:id="@+id/view_top"
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="@dimen/_1dp"
                     android:background="@android:color/darker_gray"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -68,8 +68,8 @@
 
                 <View
                     android:id="@+id/view_bottom"
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="@dimen/_1dp"
                     android:background="@android:color/darker_gray"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -79,8 +79,8 @@
                     android:id="@+id/text_view_from"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="@dimen/_8dp"
+                    android:layout_marginTop="@dimen/_8dp"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -90,8 +90,8 @@
                     android:id="@+id/text_view_to"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="@dimen/_8dp"
+                    android:layout_marginTop="@dimen/_8dp"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/text_view_from"
@@ -99,11 +99,11 @@
 
                 <TextView
                     android:id="@+id/text_view_training"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/_0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="@dimen/_8dp"
+                    android:layout_marginTop="@dimen/_8dp"
+                    android:layout_marginEnd="@dimen/_8dp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toStartOf="@id/text_view_duration"
@@ -115,7 +115,7 @@
                     android:id="@+id/text_view_duration"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/_8dp"
                     android:textAlignment="textEnd"
                     android:textColor="@color/black"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -123,9 +123,9 @@
                     tools:text="1ч.15мин." />
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/_0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/_8dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/text_view_training"
                     app:layout_constraintTop_toBottomOf="@id/text_view_training">
@@ -140,8 +140,8 @@
                         android:id="@+id/text_view_trainer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="4dp"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginEnd="@dimen/_4dp"
+                        android:layout_marginBottom="@dimen/_8dp"
                         android:layout_weight="1"
                         android:textColor="@color/black"
                         tools:text="Тренер" />
@@ -158,7 +158,7 @@
                         android:id="@+id/text_view_place"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginBottom="@dimen/_8dp"
                         android:layout_weight="1"
                         android:textColor="@color/black"
                         app:layout_constraintEnd_toEndOf="parent"
